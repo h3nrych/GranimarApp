@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppCrud.Views.loginPage"
+             Title="Granimar - Login">
+
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand" Padding="10">
+
+            <!-- Título y logo -->
+            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Padding="10">
+                <Label Text="Iniciar Sesion" FontSize="24" HorizontalOptions="Center" Margin="0,20,0,10"/>
+
+                <Image Source="logo.png" 
+       HeightRequest="150"
+       WidthRequest="350" 
+       Aspect="AspectFill"></Image>
+                <Label Text="FINOS ACABADOS " FontSize="Small" HorizontalOptions="Center" />
+                <Label Text="PARA TUS INTERIORES " FontSize="Small" HorizontalOptions="Center" />
+
+            </StackLayout>
+
+
+            <!-- Formulario -->
+            <Entry x:Name="usernameEntry" Placeholder="Nombre" Keyboard="Text" Margin="0,0,0,10"/>
+
+            <Entry x:Name="passwordEntry" Placeholder="Contraseña" IsPassword="True" Margin="0,0,0,10"/>
+
+            <!-- Botón de registro -->
+            <Button Text="Iniciar sesión" Clicked="Button_Clicked" HorizontalOptions="Center" Margin="0,20,0,0"/>
+
+            <!-- Botón para iniciar sesión -->
+            <Button Text="Registrarse"   Clicked="Button_Clicked_1" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,20,0,0"/>
+
+            <!-- Captura de imagen y botón -->
+
+        </StackLayout>
+    </ContentPage.Content>
+
+
+</ContentPage>

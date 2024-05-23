@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:MauiAppCrud.DTOs"
+             Title="Granimar - Productos"
+             x:Class="MauiAppCrud.MainPage">
+
+    <Grid RowDefinitions="Auto,Auto,*,Auto" RowSpacing="15" Margin="15">
+        <!-- Encabezado -->
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Image aligned to the left -->
+            <StackLayout Grid.Column="0" VerticalOptions="Center">
+                <Image Source="logo.png" WidthRequest="100" HeightRequest="50" HorizontalOptions="Start" />
+                <Label Text="FINOS ACABADOS " FontSize="Small" HorizontalOptions="StartAndExpand" />
+                <Label Text="PARA TUS INTERIORES " FontSize="Small" HorizontalOptions="StartAndExpand" />
+            </StackLayout>
+
+            <!-- Space between image and buttons -->
+            <Label Grid.Column="1"  Text="h3nry" HorizontalOptions="Center" VerticalOptions="Center"/>
+            
+
+            <!-- Buttons aligned to the right -->
+            <StackLayout Grid.Column="2" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="Center">
+                <Button Text="Iniciar sesión" Clicked="Button_Clicked_1" Margin="0,0,5,0"/>
+                <Button Text="i" Clicked="Button_Clicked_2"  Margin="10,0,0,0"/>
+            </StackLayout>
+        </Grid>
+
+
+        <!-- Resto del contenido -->
+        <Button Grid.Row="1" Text="Agregar Producto" HorizontalOptions="Center" Command="{Binding CrearCommand}" />
+        <Label Grid.Row="2" Text="Lista de Productos ingresados" FontSize="Subtitle" />
+
+        <ScrollView Grid.Row="3">
+            <CollectionView ItemsSource="{Binding ListaEmpleado}">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout ItemSpacing="5" Orientation="Vertical" />
+                </CollectionView.ItemsLayout>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="model:EmpleadoDTO">
+                        <Border Padding="10,5" HorizontalOptions="FillAndExpand">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="5" />
+                            </Border.StrokeShape>
+
+                            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto"
+                              ColumnDefinitions="Auto,*">
+
+                                <Label Grid.Row="0" Grid.Column="0"
+                                   Text="Nombre :" FontAttributes="Bold" />
+                                <Label Grid.Row="0" Grid.Column="1" HorizontalOptions="End"
+                                   Text="{Binding NombreCompleto}" />
+
+                                <Label Grid.Row="1" Grid.Column="0"
+                                   Text="Proveedor:" FontAttributes="Bold" />
+                                <Label Grid.Row="1" Grid.Column="1" HorizontalOptions="End"
+                                   Text="{Binding Correo}" />
+
+                                <Label Grid.Row="2" Grid.Column="0"
+                                   Text="Precio:" FontAttributes="Bold" />
+                                <Label Grid.Row="2" Grid.Column="1" HorizontalOptions="End"
+                                   Text="{Binding Sueldo, StringFormat='{0:C}'}" />
+
+                                <Label Grid.Row="3" Grid.Column="0"
+                                   Text="Fecha Agregado :" FontAttributes="Bold" />
+                                <Label Grid.Row="3" Grid.Column="1" HorizontalOptions="End"
+                                   Text="{Binding FechaContrato, StringFormat='{0:dd/MM/yyyy}'}" />
+
+                                <Label Grid.Row="4" Grid.Column="0" Padding="0,15,10,5"
+                                   Text="Editar" TextColor="Blue">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding BindingContext.EditarCommand, Source={x:Reference Name=MyContentPage}}" CommandParameter="{Binding}" />
+                                    </Label.GestureRecognizers>
+                                </Label>
+                                <Label Grid.Row="4" Grid.Column="1" Padding="10,15,0,5"
+                                   Text="Eliminar" TextColor="Red" HorizontalOptions="End">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding BindingContext.EliminarCommand, Source={x:Reference Name=MyContentPage}}" CommandParameter="{Binding}" />
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </ScrollView>
+    </Grid>
+
+
+</ContentPage>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppCrud.Views.registrarsePage"
+             Title="Granimar - Registro">
+
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="20">
+
+            <!-- Título y logo -->
+            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Padding="20">
+                <Label Text="Registrarse" FontSize="24" HorizontalOptions="Center" Margin="0,20,0,10"/>
+
+                <Image Source="logo.png" 
+                   HeightRequest="150" 
+                   WidthRequest="350"
+                   Aspect="AspectFit"/>
+                <Label Text="FINOS ACABADOS " FontSize="Small" HorizontalOptions="Center" />
+                <Label Text="PARA TUS INTERIORES " FontSize="Small" HorizontalOptions="Center" />
+
+            </StackLayout>
+
+            <!-- Formulario -->
+            <Entry Placeholder="Nombre" Keyboard="Text" Margin="0,0,0,10"/>
+            <Entry Placeholder="Correo electrónico" Keyboard="Email" Margin="0,0,0,10"/>
+            <Entry Placeholder="Contraseña" IsPassword="True" Margin="0,0,0,10"/>
+            <Entry Placeholder="Confirmar contraseña" IsPassword="True" Margin="0,0,0,10"/>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="cameraButton" Text="Tomar Foto" Clicked="OnCameraButtonClicked" VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="0" />
+
+                <Image x:Name="capturedImage" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="100" HeightRequest="100" Aspect="AspectFit" Grid.Column="2" />
+            </Grid>
+
+            <!-- Botón de registro -->
+            <Button Text="Registrarse" Clicked="Button_Clicked" HorizontalOptions="Center" Margin="0,20,0,0"/>
+
+            <!-- Botón para iniciar sesión -->
+            <Button Text="Iniciar Sesión" Clicked="OnLoginButtonClicked" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,20,0,0"/>
+
+            <!-- Captura de imagen y botón -->
+
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppCrud.Views.info"
+             Title="Conoce sobre nosotros: ">
+    <VerticalStackLayout>
+        <Image Source="logo.png" 
+           VerticalOptions="Center" 
+           HorizontalOptions="Center" />
+
+        <Label x:Name="l1" Text=""></Label>
+        <Label x:Name="l2" Text=""></Label>
+        <Label x:Name="l3" Text=""></Label>
+        <Label Text="       -Granimar es una empresa que se dedica a la venta e instalación de mármoles que se destaca por ofrecer productos de alta calidad, servicios de instalación profesional y un excelente servicio al cliente. 
+               
+                   "
+           VerticalOptions="Fill" 
+           HorizontalOptions="Fill" FontAttributes="Italic" />
+        <Label x:Name="l4" Text=""></Label>
+        <Label Text=" 
+       
+            -Su compromiso con la satisfacción del cliente y su enfoque en la excelencia les ha permitido establecerse como referentes en el sector de la piedra natural."
+   VerticalOptions="Fill" 
+   HorizontalOptions="Fill" FontAttributes="Italic" />
+        <Label x:Name="l5" Text=""></Label>
+        <Label Text="Carapungo - Quito"
+           VerticalOptions="Center" 
+           HorizontalOptions="Center" />
+        <Label x:Name="l6" Text=" "></Label>
+        <Label x:Name="l7" Text=" "></Label>
+        <Label x:Name="l8" Text=" "></Label>
+        <Label x:Name="l9" Text=" "></Label>
+        <Label x:Name="l10" Text=" "></Label>
+        <Label x:Name="l11" Text=" "></Label>
+        
+
+        <Label Text="Granimar 2024" 
+           VerticalOptions="End" 
+           HorizontalOptions="Center" />
+    </VerticalStackLayout>
+    
+</ContentPage>
